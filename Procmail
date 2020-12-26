@@ -1,0 +1,3 @@
+release: mysql -h $CLEARDB_URL -u $CLEARDB_USER OADB -p $CLEARDB_PW < schema.sql 
+release: mysql -h $CLEARDB_URL -u $CLEARDB_USER OADB -p $CLEARDB_PW < indexes.sql
+release: cat config.json.sample | sed -e "s/USER/$CLEARDB_USER/g" | sed -e "s/PW/$CLEARDB_PW/g" > config.json 
